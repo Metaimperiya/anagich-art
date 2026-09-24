@@ -50,12 +50,8 @@ section{padding:110px 0;position:relative}
   100%{transform:translateY(110vh) rotate(720deg) translateX(80px);opacity:0}
 }
 
-/* ===== Reveal анимация ===== */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.reveal.visible{opacity:1;transform:none}
-.reveal.d1{transition-delay:.1s}
-.reveal.d2{transition-delay:.2s}
-.reveal.d3{transition-delay:.3s}
+/* ===== Reveal-анимация ОТКЛЮЧЕНА — элементы видны всегда ===== */
+.reveal{opacity:1;transform:none}
 
 /* ===== Утилиты ===== */
 .eyebrow{
