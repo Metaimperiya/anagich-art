@@ -1,0 +1,47 @@
+:root{
+  /* ===== Палитра ===== */
+  --cream:#fbf3e4;
+  --ivory:#fffaf0;
+  --beige:#f3e4c8;
+  --paper:#fdf7ea;
+
+  --crimson:#c1271c;
+  --burgundy:#8f1a10;
+  --sienna:#b8451f;
+  --gold:#d99424;
+  --marigold:#e8b04a;
+  --orange:#e06a1b;
+
+  --teal:#1f4e52;
+  --navy:#2a1a12;
+  --ink:#3a2418;
+  --muted:#9a7d5c;
+
+  /* ===== Линии и границы ===== */
+  --line:rgba(193,39,28,.18);
+  --line-soft:rgba(58,36,24,.10);
+
+  /* ===== Радиусы ===== */
+  --radius-sm:10px;
+  --radius:18px;
+  --radius-lg:28px;
+
+  /* ===== Layout ===== */
+  --max:1320px;
+  --nav-height:76px;
+
+  /* ===== Анимации ===== */
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-slow:cubic-bezier(.16,.84,.44,1);
+
+  /* ===== Тени ===== */
+  --shadow-sm:0 2px 12px rgba(140,80,30,.10);
+  --shadow:0 10px 40px rgba(140,80,30,.14);
+  --shadow-lg:0 24px 70px rgba(140,80,30,.20);
+  --shadow-xl:0 40px 100px rgba(140,80,30,.28);
+
+  /* ===== Типографика ===== */
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-sans:'Inter',system-ui,sans-serif;
+  --font-script:'Caveat',cursive;
+}
