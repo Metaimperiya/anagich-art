@@ -13,7 +13,6 @@ import { initCart } from "./modules/cart.js";
 import { initPopup } from "./modules/popup.js";
 import { renderStaticSections } from "./modules/render-static.js";
 
-/* Безопасный вызов — если модуль падает, остальные всё равно работают */
 async function safe(name, fn) {
   try {
     await fn();
