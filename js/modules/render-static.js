@@ -7,14 +7,13 @@ import { artist } from "../data/artist.js";
 import { t, getLang } from "../i18n/i18n.js";
 import { escapeHtml } from "../utils/helpers.js";
 
-/* Безопасный вызов: если функция падает — показываем ошибку в секции, но не ломаем всё */
+/* Безопасный вызов */
 function safeRender(name, fn) {
   try {
     fn();
     console.log(`✅ ${name} ok`);
   } catch (e) {
     console.error(`❌ ${name} failed:`, e);
-    /* Показываем ошибку прямо в секции, чтобы было видно */
     const el = document.getElementById(name + "Content");
     if (el) {
       el.innerHTML = `
@@ -44,12 +43,12 @@ function renderAbout() {
 
   el.innerHTML = `
     <div class="about-grid">
-      <div class="about-photo reveal">
+      <div class="about-photo">
         <div class="about-photo-img">
           <img src="${artist.photo}" alt="${escapeHtml(artist.name)}">
         </div>
       </div>
-      <div class="about-text reveal d1">
+      <div class="about-text">
         <h3>${t("about.title")}</h3>
         <div class="role">${t("about.role")}</div>
         <p class="lead">${escapeHtml(artist.quote[lang] || artist.quote.ru)}</p>
@@ -75,7 +74,7 @@ function renderWorkshop() {
 
   el.innerHTML = `
     <div class="workshop-inner">
-      <div class="reveal">
+      <div>
         <span class="script">${t("workshop.script")}</span>
         <h2>${escapeHtml(w.title[lang] || w.title.ru)}</h2>
         <p>${escapeHtml(w.description[lang] || w.description.ru)}</p>
@@ -89,7 +88,7 @@ function renderWorkshop() {
         </ul>
         <a href="${w.bookingUrl}" target="_blank" rel="noopener" class="btn btn-primary">${t("workshop.bookBtn")}</a>
       </div>
-      <div class="workshop-visual reveal d2">
+      <div class="workshop-visual">
         <img src="${w.poster}" alt="${escapeHtml(w.title[lang] || w.title.ru)}">
       </div>
     </div>
@@ -120,7 +119,7 @@ function renderContact() {
 
   el.innerHTML = `
     <div class="contact-grid">
-      <div class="contact-left reveal">
+      <div class="contact-left">
         <span class="eyebrow">${t("contact.eyebrow")}</span>
         <h2>${t("contact.title")}</h2>
         <p>${t("contact.subtitle")}</p>
@@ -130,7 +129,7 @@ function renderContact() {
           ${contactItemHTML(c.whatsapp, "whatsapp")}
         </div>
       </div>
-      <div class="contact-right reveal d2">
+      <div class="contact-right">
         <h3>${t("contact.formTitle")}</h3>
         <p class="sub">${t("contact.formSubtitle")}</p>
         <form id="contactForm">
