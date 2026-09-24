@@ -1,0 +1,80 @@
+.hero{padding:180px 0 90px;position:relative;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('../assets/images/pishem-maslyanymi-kraskami.png');
+  background-size:cover;background-position:center;
+  opacity:.10;filter:blur(2px);
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(251,243,228,.55) 0%,rgba(251,243,228,.85) 60%,var(--cream) 100%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero-text{position:relative}
+.hero-tag{
+  display:inline-block;font-size:12px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--sienna);margin-bottom:26px;padding:8px 20px;
+  border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.65);
+}
+.hero-name{
+  font-family:var(--font-script);
+  font-size:clamp(58px,9vw,120px);
+  color:var(--crimson);line-height:.95;font-weight:700;
+  margin-bottom:8px;letter-spacing:-1px;
+}
+.hero-role{
+  font-family:var(--font-serif);
+  font-size:clamp(22px,3vw,34px);
+  color:var(--sienna);font-style:italic;margin-bottom:26px;
+}
+.hero-desc{
+  font-size:clamp(15px,1.4vw,18px);
+  color:var(--muted);max-width:520px;
+  margin-bottom:40px;line-height:1.75;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+
+.hero-visual{position:relative}
+.hero-portrait{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);aspect-ratio:4/5;
+  border:8px solid var(--ivory);background:var(--beige);
+}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;transition:1.2s var(--ease)}
+.hero-portrait:hover img{transform:scale(1.04)}
+.hero-portrait::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(143,26,16,.22));
+  pointer-events:none;
+}
+.hero-visual::before{
+  content:'';position:absolute;top:-40px;right:-50px;
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,106,27,.32),transparent 68%);
+  filter:blur(4px);z-index:-1;
+}
+.hero-visual::after{
+  content:'';position:absolute;bottom:-50px;left:-60px;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,148,36,.28),transparent 68%);
+  filter:blur(4px);z-index:-1;
+}
+.hero-sig{
+  position:absolute;bottom:-34px;right:24px;
+  font-family:var(--font-script);font-size:38px;color:var(--crimson);
+  background:var(--ivory);padding:8px 22px;border-radius:999px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--line);
+  transform:rotate(-4deg);
+}
+
+@media(max-width:960px){
+  .hero{padding:130px 0 70px}
+  .hero-grid{grid-template-columns:1fr;gap:50px}
+}
+@media(max-width:640px){
+  .hero-name{font-size:64px}
+  .hero-sig{font-size:28px;bottom:-22px;right:12px;padding:6px 16px}
+}
