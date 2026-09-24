@@ -1,25 +1,45 @@
 /**
  * Рендер статических секций: About, Workshop, Contact, Footer, Exhibitions.
- * Вынесено в отдельный модуль, чтобы app.js оставался чистым.
+ * Каждая секция обёрнута в try/catch — если одна падает, остальные рисуются.
  */
 
 import { artist } from "../data/artist.js";
 import { t, getLang } from "../i18n/i18n.js";
 import { escapeHtml } from "../utils/helpers.js";
 
+/* Безопасный вызов: если функция падает — показываем ошибку в секции, но не ломаем всё */
+function safeRender(name, fn) {
+  try {
+    fn();
+    console.log(`✅ ${name} ok`);
+  } catch (e) {
+    console.error(`❌ ${name} failed:`, e);
+    /* Показываем ошибку прямо в секции, чтобы было видно */
+    const el = document.getElementById(name + "Content");
+    if (el) {
+      el.innerHTML = `
+        <div style="padding:40px 20px;background:#ffe0e0;color:#8f1a10;border-radius:14px;font-family:monospace;font-size:13px">
+          <b>Ошибка в ${name}:</b><br>
+          ${escapeHtml(e.message || String(e))}<br><br>
+          <small>${escapeHtml(e.stack ? e.stack.split("\n")[0] : "")}</small>
+        </div>
+      `;
+    }
+  }
+}
+
 export function renderStaticSections() {
-  renderAbout();
-  renderWorkshop();
-  renderExhibitions();
-  renderContact();
-  renderFooter();
-  renderArtistContactsInFooter();
+  safeRender("about", renderAbout);
+  safeRender("workshop", renderWorkshop);
+  safeRender("exhibitions", renderExhibitions);
+  safeRender("contact", renderContact);
+  safeRender("footer", renderFooter);
 }
 
 /* ===== ABOUT ===== */
 function renderAbout() {
   const el = document.getElementById("aboutContent");
-  if (!el) return;
+  if (!el) throw new Error("Не найден #aboutContent");
   const lang = getLang();
 
   el.innerHTML = `
@@ -47,9 +67,10 @@ function renderAbout() {
 /* ===== WORKSHOP ===== */
 function renderWorkshop() {
   const el = document.getElementById("workshopContent");
-  if (!el) return;
+  if (!el) throw new Error("Не найден #workshopContent");
   const lang = getLang();
   const w = artist.workshop;
+  if (!w) throw new Error("Нет artist.workshop в artist.js");
   const features = (w.features[lang] || w.features.ru);
 
   el.innerHTML = `
@@ -78,12 +99,14 @@ function renderWorkshop() {
 /* ===== EXHIBITIONS (empty state) ===== */
 function renderExhibitions() {
   const el = document.getElementById("exhibitionsContent");
-  if (!el) return;
+  if (!el) throw new Error("Не найден #exhibitionsContent");
 
   el.innerHTML = `
-    <div class="exhibitions-empty">
-      <span class="script">coming soon</span>
-      <p>${t("nav.exhibitions")} — soon</p>
+    <div class="exhibitions-empty" style="text-align:center;padding:60px 20px;color:var(--muted)">
+      <span class="script" style="display:block;font-size:38px;color:var(--crimson);margin-bottom:14px">coming soon</span>
+      <p style="font-family:var(--font-serif);font-size:20px;font-style:italic">
+        ${t("nav.exhibitions")} — скоро здесь появятся выставки
+      </p>
     </div>
   `;
 }
@@ -91,8 +114,9 @@ function renderExhibitions() {
 /* ===== CONTACT ===== */
 function renderContact() {
   const el = document.getElementById("contactContent");
-  if (!el) return;
+  if (!el) throw new Error("Не найден #contactContent");
   const c = artist.contacts;
+  if (!c) throw new Error("Нет artist.contacts в artist.js");
 
   el.innerHTML = `
     <div class="contact-grid">
@@ -130,7 +154,6 @@ function renderContact() {
 
   el.querySelector("#contactForm")?.addEventListener("submit", (e) => {
     e.preventDefault();
-    /* TODO: подключить реальный backend / Formspree / EmailJS */
     alert(t("contact.sent"));
     e.target.reset();
   });
@@ -156,7 +179,7 @@ function contactItemHTML(contact, type) {
 /* ===== FOOTER ===== */
 function renderFooter() {
   const el = document.getElementById("footerContent");
-  if (!el) return;
+  if (!el) throw new Error("Не найден #footerContent");
   const c = artist.contacts;
   const lang = getLang();
 
@@ -194,8 +217,4 @@ function renderFooter() {
 
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-}
-
-function renderArtistContactsInFooter() {
-  /* Дополнительно, если понадобится */
 }
