@@ -1,0 +1,124 @@
+/* ===== Модальное окно картины ===== */
+.artwork-modal{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(42,26,18,.72);
+  backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  padding:30px 20px;
+  opacity:0;visibility:hidden;
+  transition:.4s var(--ease);
+}
+.artwork-modal.open{opacity:1;visibility:visible}
+
+.artwork-dialog{
+  background:var(--ivory);
+  border-radius:var(--radius-lg);
+  max-width:1180px;width:100%;
+  max-height:92vh;overflow-y:auto;
+  box-shadow:var(--shadow-xl);
+  display:grid;grid-template-columns:1.15fr 1fr;
+  transform:translateY(30px) scale(.98);
+  transition:.5s var(--ease);
+}
+.artwork-modal.open .artwork-dialog{transform:none}
+
+.artwork-close{
+  position:absolute;top:20px;right:20px;
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(255,250,240,.95);color:var(--burgundy);
+  display:flex;align-items:center;justify-content:center;
+  z-index:10;transition:.3s var(--ease);
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+}
+.artwork-close:hover{background:var(--crimson);color:#fff;transform:rotate(90deg)}
+.artwork-close svg{width:18px;height:18px}
+
+/* Левая часть — изображение */
+.artwork-media{
+  position:relative;background:var(--beige);
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.artwork-media img,
+.artwork-media video{
+  width:100%;height:100%;object-fit:contain;
+  max-height:92vh;
+}
+.artwork-thumbs{
+  position:absolute;bottom:18px;left:18px;right:18px;
+  display:flex;gap:10px;justify-content:center;
+}
+.artwork-thumb{
+  width:52px;height:52px;border-radius:10px;overflow:hidden;
+  border:2px solid transparent;cursor:pointer;
+  transition:.3s;
+}
+.artwork-thumb.active{border-color:var(--crimson)}
+.artwork-thumb img{width:100%;height:100%;object-fit:cover}
+
+/* Правая часть — информация */
+.artwork-info{padding:48px 44px;display:flex;flex-direction:column}
+.artwork-cat{
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--sienna);font-weight:600;margin-bottom:14px;
+}
+.artwork-title{
+  font-family:var(--font-serif);font-size:clamp(28px,4vw,40px);
+  color:var(--burgundy);margin-bottom:20px;line-height:1.15;font-weight:500;
+}
+.artwork-specs{
+  display:flex;flex-direction:column;gap:10px;
+  padding:20px 0;margin:20px 0;
+  border-top:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft);
+}
+.artwork-specs .spec{display:flex;justify-content:space-between;gap:20px;font-size:14px}
+.artwork-specs .spec-lbl{
+  color:var(--sienna);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;font-weight:500;padding-top:2px;
+}
+.artwork-specs .spec-val{color:var(--ink);text-align:right}
+
+.artwork-desc{
+  font-size:15px;color:var(--muted);line-height:1.8;
+  margin-bottom:22px;
+}
+
+.artwork-price-block{
+  display:flex;align-items:baseline;gap:14px;
+  margin:18px 0 26px;
+}
+.artwork-price{
+  font-family:var(--font-serif);font-size:34px;
+  color:var(--crimson);font-weight:600;letter-spacing:-.5px;
+}
+.artwork-price-note{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+
+.artwork-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.artwork-actions .btn{flex:1;justify-content:center;min-width:140px}
+
+.artwork-mini-actions{
+  display:flex;gap:20px;padding-top:22px;
+  border-top:1px solid var(--line-soft);
+}
+.mini-action{
+  display:flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--ink);letter-spacing:.4px;
+  transition:.3s;cursor:pointer;
+}
+.mini-action:hover{color:var(--crimson)}
+.mini-action svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.mini-action.active{color:var(--crimson);font-weight:500}
+.mini-action.active svg{fill:currentColor}
+
+@media(max-width:900px){
+  .artwork-dialog{grid-template-columns:1fr;max-height:96vh}
+  .artwork-media{aspect-ratio:4/5}
+  .artwork-info{padding:32px 26px}
+  .artwork-media img,.artwork-media video{max-height:60vh}
+}
+@media(max-width:640px){
+  .artwork-modal{padding:12px}
+  .artwork-info{padding:26px 20px 30px}
+  .artwork-actions .btn{padding:14px 20px;font-size:13px;min-width:auto}
+}
