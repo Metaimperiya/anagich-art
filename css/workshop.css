@@ -1,0 +1,84 @@
+.workshop{
+  background:linear-gradient(135deg,var(--burgundy),var(--crimson) 55%,var(--orange));
+  color:var(--ivory);position:relative;overflow:hidden;
+}
+.workshop::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(232,176,74,.30), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(184,69,31,.45), transparent 50%);
+  pointer-events:none;
+}
+.workshop-inner{
+  position:relative;display:grid;grid-template-columns:1.1fr 1fr;
+  gap:60px;align-items:center;
+}
+.workshop h2{color:var(--ivory);font-size:clamp(34px,5vw,52px);margin-bottom:20px}
+.workshop h2 em{color:var(--marigold);font-style:italic}
+.workshop .script{color:var(--marigold);font-size:38px;display:block;margin-bottom:14px}
+.workshop p{
+  color:rgba(255,250,240,.85);font-size:16.5px;
+  line-height:1.8;margin-bottom:26px;max-width:520px;
+}
+
+.workshop-info{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  margin:30px 0 34px;max-width:560px;
+}
+.workshop-info .wi{
+  background:rgba(255,250,240,.10);
+  border:1px solid rgba(255,250,240,.18);
+  border-radius:14px;padding:16px 14px;text-align:center;
+}
+.workshop-info .wi .ic{font-size:22px;margin-bottom:6px;display:block}
+.workshop-info .wi .lbl{
+  font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--marigold);margin-bottom:4px;display:block;
+}
+.workshop-info .wi .val{
+  font-size:13.5px;color:var(--ivory);font-weight:500;line-height:1.35;
+}
+
+.workshop-features{list-style:none;margin-bottom:36px}
+.workshop-features li{
+  display:flex;align-items:flex-start;gap:14px;
+  margin-bottom:14px;font-size:15px;color:rgba(255,250,240,.92);
+}
+.workshop-features li::before{
+  content:'';flex-shrink:0;width:22px;height:22px;
+  border-radius:50%;background:var(--marigold);margin-top:2px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238f1a10' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size:14px;background-position:center;background-repeat:no-repeat;
+}
+
+/* Афиша — полная, без обрезки */
+.workshop-visual{
+  position:relative;width:100%;
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+  border:8px solid rgba(255,250,240,.22);
+  background:var(--burgundy);
+  transition:.6s var(--ease);
+}
+.workshop-visual:hover{transform:translateY(-6px);box-shadow:0 40px 100px rgba(0,0,0,.55)}
+.workshop-visual img{
+  width:100%;height:auto;display:block;object-fit:contain;
+  transition:1.2s var(--ease);
+}
+.workshop-visual:hover img{transform:scale(1.02)}
+.workshop-visual::after{
+  content:'27 сентября · 10:00–12:00';
+  position:absolute;bottom:18px;left:18px;right:18px;
+  background:rgba(143,26,16,.90);backdrop-filter:blur(8px);
+  color:var(--ivory);text-align:center;padding:12px;
+  border-radius:999px;font-size:13px;letter-spacing:1.5px;
+  text-transform:uppercase;font-weight:500;pointer-events:none;
+}
+
+@media(max-width:960px){
+  .workshop-inner{grid-template-columns:1fr;gap:50px}
+  .workshop-info{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .workshop-info{grid-template-columns:1fr}
+}
