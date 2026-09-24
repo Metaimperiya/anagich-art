@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anastasia Gich — Художник | Осенний пейзаж</title>
-<meta name="description" content="Anastasia Gich — современная художница. Живопись маслом, объёмные барельефы, текстурная паста, поталь. Мастер-класс «Осенний пейзаж» 27 сентября. Заказ картин с доставкой по всему миру.">
+<title>Anastasia Gich — Original Paintings & Fine Art | Art Shop</title>
+<meta name="description" content="Anastasia Gich — современная художница. Original paintings, fine art prints, барельефы. Галерея работ, мастер-классы, доставка по всему миру.">
+<meta name="keywords" content="Anastasia Gich, ana.gich, artist, original paintings, fine art, барельеф, art shop, картины на заказ">
 <meta name="author" content="Anastasia Gich">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Anastasia Gich — Художник">
-<meta property="og:description" content="Мастер-класс «Осенний пейзаж» 27 сентября. Галерея работ и заказ картин.">
+<meta property="og:title" content="Anastasia Gich — Original Paintings & Fine Art">
+<meta property="og:description" content="Original paintings, fine art prints, workshop. Worldwide shipping.">
 <meta property="og:image" content="assets/images/pishem-maslyanymi-kraskami.png">
 <meta property="og:locale" content="ru_RU">
 <link rel="canonical" href="https://anagich.art/">
@@ -17,309 +18,96 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/hero.css">
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Person",
   "name":"Anastasia Gich",
-  "jobTitle":"Художник",
+  "jobTitle":"Artist",
   "url":"https://anagich.art/",
   "sameAs":["https://t.me/ana_gich","https://www.instagram.com/anagich_art"]
 }
 </script>
-<style>
-:root{
-  --cream:#fbf3e4;--ivory:#fffaf0;--beige:#f3e4c8;--paper:#fdf7ea;
-  --crimson:#c1271c;--burgundy:#8f1a10;--sienna:#b8451f;
-  --gold:#d99424;--marigold:#e8b04a;--orange:#e06a1b;
-  --teal:#1f4e52;--navy:#2a1a12;--ink:#3a2418;--muted:#9a7d5c;
-  --line:rgba(193,39,28,.18);--line-soft:rgba(58,36,24,.10);
-  --radius:18px;--radius-lg:28px;--max:1240px;
-  --ease:cubic-bezier(.22,.61,.36,1);
-  --shadow-sm:0 2px 12px rgba(140,80,30,.10);
-  --shadow:0 10px 40px rgba(140,80,30,.14);
-  --shadow-lg:0 24px 70px rgba(140,80,30,.20);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--ink);
-  line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;
-  background-image:
-    radial-gradient(circle at 12% 8%, rgba(224,106,27,.10), transparent 45%),
-    radial-gradient(circle at 88% 92%, rgba(193,39,28,.08), transparent 45%),
-    radial-gradient(circle at 70% 30%, rgba(217,148,36,.09), transparent 42%);
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
-h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-.3px;line-height:1.15;color:var(--burgundy)}
-.script{font-family:'Caveat',cursive;color:var(--crimson);font-weight:600}
-.container{max-width:var(--max);margin:0 auto;padding:0 32px}
-section{padding:110px 0;position:relative}
-
-/* ---------- FALLING LEAVES ---------- */
-.leaves-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
-.leaf{
-  position:absolute;top:-80px;font-size:22px;animation:fall linear infinite;
-  will-change:transform;opacity:.75;
-  filter:drop-shadow(0 2px 4px rgba(200,120,30,.25));
-}
-@keyframes fall{
-  0%{transform:translateY(-80px) rotate(0deg) translateX(0);opacity:0}
-  10%{opacity:.85}
-  90%{opacity:.85}
-  100%{transform:translateY(110vh) rotate(720deg) translateX(80px);opacity:0}
-}
-
-/* ---------- NAV ---------- */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:.4s var(--ease);background:rgba(251,243,228,0)}
-.nav.scrolled{background:rgba(251,243,228,.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line-soft);padding:12px 0}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{font-family:'Caveat',cursive;font-size:30px;color:var(--crimson);font-weight:700;letter-spacing:.5px}
-.logo span{color:var(--gold)}
-.nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{font-size:14px;color:var(--ink);position:relative;transition:.3s}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--crimson);transition:.35s var(--ease)}
-.nav-links a:hover{color:var(--crimson)}
-.nav-links a:hover::after{width:100%}
-.nav-cta{font-size:13px;padding:11px 22px;border:1px solid var(--crimson);border-radius:999px;color:var(--crimson);transition:.35s var(--ease);background:rgba(255,255,255,.5)}
-.nav-cta:hover{background:var(--crimson);color:var(--ivory);transform:translateY(-2px)}
-.burger{display:none;flex-direction:column;gap:5px;padding:8px}
-.burger span{width:24px;height:1.6px;background:var(--crimson);transition:.3s}
-
-/* ---------- BUTTONS ---------- */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 34px;border-radius:999px;font-size:14px;font-weight:500;letter-spacing:.4px;border:1px solid transparent;transition:.4s var(--ease)}
-.btn-primary{background:linear-gradient(135deg,var(--orange),var(--crimson));color:#fff;box-shadow:0 8px 24px rgba(193,39,28,.30)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(193,39,28,.45)}
-.btn-crimson{background:var(--crimson);color:var(--ivory)}
-.btn-crimson:hover{background:var(--burgundy);transform:translateY(-3px)}
-.btn-ghost{border-color:var(--line);color:var(--burgundy);background:rgba(255,255,255,.5)}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
-
-/* ---------- HERO ---------- */
-.hero{padding:180px 0 90px;position:relative;overflow:hidden}
-.hero-bg{
-  position:absolute;inset:0;z-index:0;
-  background-image:url('assets/images/pishem-maslyanymi-kraskami.png');
-  background-size:cover;background-position:center;
-  opacity:.10;filter:blur(2px);
-}
-.hero-bg::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(251,243,228,.55) 0%,rgba(251,243,228,.85) 60%,var(--cream) 100%);
-}
-.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center;position:relative;z-index:2}
-.hero-text{position:relative}
-.hero-tag{display:inline-block;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--sienna);margin-bottom:26px;padding:8px 20px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.65)}
-.hero-name{font-family:'Caveat',cursive;font-size:clamp(58px,9vw,120px);color:var(--crimson);line-height:.95;font-weight:700;margin-bottom:8px;letter-spacing:-1px}
-.hero-role{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);color:var(--sienna);font-style:italic;margin-bottom:26px}
-.hero-desc{font-size:clamp(15px,1.4vw,18px);color:var(--muted);max-width:520px;margin-bottom:40px;line-height:1.75}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.hero-visual{position:relative}
-.hero-portrait{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5;border:8px solid var(--ivory);background:var(--beige)}
-.hero-portrait img{width:100%;height:100%;object-fit:cover;transition:1.2s var(--ease)}
-.hero-portrait:hover img{transform:scale(1.04)}
-.hero-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(143,26,16,.22));pointer-events:none}
-.hero-visual::before{content:'';position:absolute;top:-40px;right:-50px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(224,106,27,.32),transparent 68%);filter:blur(4px);z-index:-1}
-.hero-visual::after{content:'';position:absolute;bottom:-50px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(217,148,36,.28),transparent 68%);filter:blur(4px);z-index:-1}
-.hero-sig{position:absolute;bottom:-34px;right:24px;font-family:'Caveat',cursive;font-size:38px;color:var(--crimson);background:var(--ivory);padding:8px 22px;border-radius:999px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transform:rotate(-4deg)}
-
-/* ---------- SECTION HEADINGS ---------- */
-.sec-head{text-align:center;max-width:720px;margin:0 auto 64px}
-.sec-head .eyebrow{display:inline-block;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--sienna);margin-bottom:20px;padding:7px 18px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.6)}
-.sec-head h2{font-size:clamp(34px,5vw,54px);margin-bottom:18px}
-.sec-head h2 em{font-style:italic;color:var(--crimson)}
-.sec-head p{color:var(--muted);font-size:16px;max-width:560px;margin:0 auto}
-
-/* ---------- ABOUT ---------- */
-.about{background:linear-gradient(180deg,var(--cream),var(--paper));position:relative}
-.about::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
-.about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;align-items:center}
-.about-photo{position:relative}
-.about-photo-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5;border:6px solid var(--ivory);background:var(--beige)}
-.about-photo-img img{width:100%;height:100%;object-fit:cover}
-.about-photo::after{content:'';position:absolute;inset:-24px -24px auto auto;width:140px;height:140px;border:1px solid var(--gold);border-radius:50%;z-index:-1}
-.about-text h3{font-family:'Caveat',cursive;font-size:44px;color:var(--crimson);margin-bottom:8px;font-weight:600}
-.about-text .role{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--sienna);font-size:20px;margin-bottom:28px}
-.about-text p{color:var(--ink);font-size:16px;margin-bottom:20px;line-height:1.8;opacity:.88}
-.about-text p.lead{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--burgundy);font-style:italic;line-height:1.55;opacity:1}
-.about-quote{margin-top:34px;padding:26px 30px;border-left:3px solid var(--crimson);background:rgba(255,255,255,.65);border-radius:0 var(--radius) var(--radius) 0;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--burgundy)}
-.about-quote .script{display:block;margin-top:12px;font-size:26px;font-style:normal}
-
-/* ---------- GALLERY ---------- */
-.gallery{background:var(--paper);position:relative}
-.gallery::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 80% 10%, rgba(224,106,27,.09), transparent 40%),radial-gradient(circle at 15% 85%, rgba(193,39,28,.07), transparent 40%);pointer-events:none}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:38px;position:relative}
-.art-card{background:var(--ivory);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:.55s var(--ease);border:1px solid var(--line-soft);display:flex;flex-direction:column;position:relative}
-.art-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--line)}
-.art-media{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--beige)}
-.art-media img{width:100%;height:100%;object-fit:cover;transition:1.1s var(--ease)}
-.art-card:hover .art-media img{transform:scale(1.05)}
-.art-media video{width:100%;height:100%;object-fit:cover;display:block}
-.art-badge{position:absolute;top:16px;left:16px;background:rgba(193,39,28,.94);backdrop-filter:blur(6px);color:#fff;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:999px;font-weight:500;z-index:2}
-.art-body{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
-.art-body h3{font-size:26px;margin-bottom:10px;color:var(--burgundy);font-weight:600}
-.art-meta{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sienna);margin-bottom:14px;font-weight:500}
-.art-desc{font-size:14.5px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:20px}
-.art-foot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid var(--line-soft)}
-.art-foot .script{font-size:24px;transform:rotate(-2deg)}
-.art-toggle{font-size:13px;color:var(--crimson);display:inline-flex;align-items:center;gap:6px;transition:.3s}
-.art-toggle:hover{color:var(--gold);gap:10px}
-.art-more{max-height:0;overflow:hidden;transition:max-height .5s var(--ease);font-size:14px;color:var(--muted);line-height:1.7}
-.art-more-inner{padding-top:16px}
-.art-more-inner strong{color:var(--burgundy);font-weight:500}
-.art-card.open .art-more{max-height:400px}
-
-/* ---------- WORKSHOP ---------- */
-.workshop{background:linear-gradient(135deg,var(--burgundy),var(--crimson) 55%,var(--orange));color:var(--ivory);position:relative;overflow:hidden}
-.workshop::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 20%, rgba(232,176,74,.30), transparent 45%),radial-gradient(circle at 85% 80%, rgba(184,69,31,.45), transparent 50%);pointer-events:none}
-.workshop-inner{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
-.workshop h2{color:var(--ivory);font-size:clamp(34px,5vw,52px);margin-bottom:20px}
-.workshop h2 em{color:var(--marigold);font-style:italic}
-.workshop .script{color:var(--marigold);font-size:38px;display:block;margin-bottom:14px}
-.workshop p{color:rgba(255,250,240,.85);font-size:16.5px;line-height:1.8;margin-bottom:26px;max-width:520px}
-.workshop-info{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0 34px;max-width:560px}
-.workshop-info .wi{background:rgba(255,250,240,.10);border:1px solid rgba(255,250,240,.18);border-radius:14px;padding:16px 14px;text-align:center}
-.workshop-info .wi .ic{font-size:22px;margin-bottom:6px;display:block}
-.workshop-info .wi .lbl{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--marigold);margin-bottom:4px;display:block}
-.workshop-info .wi .val{font-size:13.5px;color:var(--ivory);font-weight:500;line-height:1.35}
-.workshop-features{list-style:none;margin-bottom:36px}
-.workshop-features li{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;font-size:15px;color:rgba(255,250,240,.92)}
-.workshop-features li::before{content:'';flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--marigold);margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238f1a10' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:14px;background-position:center;background-repeat:no-repeat}
-
-/* ==== АФИША — ПОЛНОСТЬЮ ВИДНА, БЕЗ ОБРЕЗКИ ==== */
-.workshop-visual{
-  position:relative;
-  width:100%;
-  border-radius:var(--radius-lg);
-  overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,.45);
-  border:8px solid rgba(255,250,240,.22);
-  background:var(--burgundy);
-  transition:.6s var(--ease);
-}
-.workshop-visual:hover{transform:translateY(-6px);box-shadow:0 40px 100px rgba(0,0,0,.55)}
-.workshop-visual img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  transition:1.2s var(--ease);
-}
-.workshop-visual:hover img{transform:scale(1.02)}
-.workshop-visual::after{
-  content:'27 сентября · 10:00–12:00';
-  position:absolute;bottom:18px;left:18px;right:18px;
-  background:rgba(143,26,16,.90);
-  backdrop-filter:blur(8px);
-  color:var(--ivory);text-align:center;padding:12px;
-  border-radius:999px;font-size:13px;letter-spacing:1.5px;
-  text-transform:uppercase;font-weight:500;
-  pointer-events:none;
-}
-
-/* ---------- CONTACT ---------- */
-.contact{background:var(--cream)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
-.contact-left h2{font-size:clamp(34px,5vw,52px);margin-bottom:22px}
-.contact-left h2 em{color:var(--crimson);font-style:italic}
-.contact-left p{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:30px;max-width:480px}
-.contact-list{display:flex;flex-direction:column;gap:14px}
-.contact-item{display:flex;align-items:center;gap:18px;padding:18px 22px;background:var(--ivory);border:1px solid var(--line-soft);border-radius:var(--radius);transition:.4s var(--ease)}
-.contact-item:hover{transform:translateX(6px);border-color:var(--crimson);box-shadow:var(--shadow-sm)}
-.contact-item .ic{width:44px;height:44px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--orange),var(--crimson));color:#fff}
-.contact-item .ic svg{width:20px;height:20px;fill:currentColor}
-.contact-item .txt{display:flex;flex-direction:column}
-.contact-item .lbl{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sienna);margin-bottom:3px}
-.contact-item .val{font-size:15.5px;color:var(--burgundy);font-weight:500}
-.contact-right{background:var(--ivory);border:1px solid var(--line-soft);border-radius:var(--radius-lg);padding:44px;box-shadow:var(--shadow-sm)}
-.contact-right h3{font-family:'Caveat',cursive;font-size:38px;color:var(--crimson);margin-bottom:10px}
-.contact-right .sub{font-size:14px;color:var(--muted);margin-bottom:30px}
-.field{margin-bottom:18px}
-.field label{display:block;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--sienna);margin-bottom:8px}
-.field input,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line-soft);border-radius:12px;background:var(--cream);font-family:inherit;font-size:15px;color:var(--ink);transition:.3s;outline:none}
-.field input:focus,.field textarea:focus{border-color:var(--crimson);background:#fff}
-.field textarea{resize:vertical;min-height:110px}
-.contact-right .btn{width:100%;justify-content:center;margin-top:8px}
-
-/* ---------- FOOTER ---------- */
-footer{background:var(--navy);color:rgba(255,250,240,.72);padding:64px 0 34px;position:relative}
-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,176,74,.5),transparent)}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;margin-bottom:50px}
-.foot-brand .script{font-size:44px;color:var(--marigold)}
-.foot-brand p{margin-top:14px;font-size:14.5px;line-height:1.75;max-width:320px}
-.foot-col h4{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:18px;font-weight:500}
-.foot-col a{display:block;font-size:14.5px;padding:6px 0;transition:.3s;color:rgba(255,250,240,.68)}
-.foot-col a:hover{color:var(--marigold);transform:translateX(4px)}
-.foot-bottom{border-top:1px solid rgba(255,250,240,.14);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,250,240,.55)}
-.foot-bottom a{color:var(--marigold)}
-
-/* ---------- REVEAL ---------- */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.reveal.visible{opacity:1;transform:none}
-.reveal.d1{transition-delay:.1s}
-.reveal.d2{transition-delay:.2s}
-.reveal.d3{transition-delay:.3s}
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:960px){
-  .hero-grid,.about-grid,.workshop-inner,.contact-grid{grid-template-columns:1fr;gap:50px}
-  .hero{padding:130px 0 70px}
-  .nav-links{display:none}
-  .burger{display:flex}
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .foot-brand{grid-column:1/-1}
-  section{padding:80px 0}
-  .workshop-info{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .container{padding:0 20px}
-  .gallery-grid{grid-template-columns:1fr;gap:28px}
-  .hero-name{font-size:64px}
-  .hero-sig{font-size:28px;bottom:-22px;right:12px;padding:6px 16px}
-  .contact-right{padding:30px}
-  .foot-grid{grid-template-columns:1fr}
-  .nav-cta{padding:9px 16px;font-size:12px}
-  .workshop-info{grid-template-columns:1fr}
-}
-</style>
 </head>
 <body>
 
+<!-- FALLING LEAVES -->
 <div class="leaves-layer" id="leavesLayer" aria-hidden="true"></div>
 
-<nav class="nav" id="nav">
+<!-- HEADER -->
+<header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#top" class="logo">Anastasia <span>Gich</span></a>
-    <div class="nav-links">
-      <a href="#about">О художнике</a>
-      <a href="#gallery">Галерея</a>
-      <a href="#workshop">Мастер-класс</a>
-      <a href="#contact">Контакты</a>
-    </div>
-    <a href="#contact" class="nav-cta">Заказать картину</a>
-    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
-  </div>
-</nav>
 
+    <nav class="nav-menu" id="navMenu">
+      <a href="#top" data-i18n="nav.home">HOME</a>
+      <a href="#gallery" data-i18n="nav.paintings">ORIGINAL PAINTINGS</a>
+      <a href="#prints" data-i18n="nav.prints">FINE ART PRINTS</a>
+      <a href="#collections" data-i18n="nav.collections">COLLECTIONS</a>
+      <a href="#about" data-i18n="nav.about">ABOUT</a>
+      <a href="#exhibitions" data-i18n="nav.exhibitions">EXHIBITIONS</a>
+      <a href="#workshop" data-i18n="nav.workshop">WORKSHOP</a>
+      <a href="#contact" data-i18n="nav.contact">CONTACT</a>
+    </nav>
+
+    <div class="nav-tools">
+      <button class="tool-btn" id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <button class="tool-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="tool-btn" id="cartBtn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2 12h11l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+
+      <div class="dropdown">
+        <button class="tool-btn tool-text" id="langBtn" aria-haspopup="true">
+          <span id="langCurrent">RU</span>
+          <svg viewBox="0 0 12 8" width="10" height="7" fill="currentColor"><path d="M6 8L0 0h12z"/></svg>
+        </button>
+        <ul class="dropdown-menu" id="langMenu"></ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="tool-btn tool-text" id="currencyBtn" aria-haspopup="true">
+          <span id="currencyCurrent">USD $</span>
+          <svg viewBox="0 0 12 8" width="10" height="7" fill="currentColor"><path d="M6 8L0 0h12z"/></svg>
+        </button>
+        <ul class="dropdown-menu dropdown-scroll" id="currencyMenu"></ul>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text">
-        <span class="hero-tag reveal">Художник · Живопись маслом · Барельеф</span>
-        <h1 class="hero-name reveal d1">Anastasia Gich</h1>
-        <div class="hero-role reveal d2">Осенний свет, текстура и тишина холста</div>
-        <p class="hero-desc reveal d2">Создаю живопись, объёмные барельефы и текстурные работы, в которых осень живёт круглый год. Каждая картина — это тёплый вечер в мастерской, запах масла и краска на палитре.</p>
-        <div class="hero-actions reveal d3">
-          <a href="#gallery" class="btn btn-primary">Смотреть галерею →</a>
-          <a href="#workshop" class="btn btn-ghost">Мастер-класс 27.09</a>
+        <span class="hero-tag" data-i18n="hero.tag">ARTIST · ORIGINAL PAINTINGS · RELIEF ART</span>
+        <h1 class="hero-name">Anastasia Gich</h1>
+        <div class="hero-role" data-i18n="hero.role">Осенний свет, текстура и тишина холста</div>
+        <p class="hero-desc" data-i18n="hero.desc">Создаю живопись, объёмные барельефы и текстурные работы, в которых осень живёт круглый год. Каждая картина — это тёплый вечер в мастерской, запах масла и краска на палитре.</p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn btn-primary" data-i18n="hero.cta1">VIEW ARTWORKS →</a>
+          <a href="#about" class="btn btn-ghost" data-i18n="hero.cta2">ABOUT THE ARTIST</a>
         </div>
       </div>
-      <div class="hero-visual reveal d2">
+      <div class="hero-visual">
         <div class="hero-portrait">
-          <img src="assets/images/hozyajka-cheshujchatyh-mirov.png" alt="Анастасия Гич в мастерской">
+          <img src="assets/images/hozyajka-cheshujchatyh-mirov.png" alt="Anastasia Gich">
         </div>
         <div class="hero-sig">осень в каждой работе</div>
       </div>
@@ -327,235 +115,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   </div>
 </section>
 
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-photo reveal">
-        <div class="about-photo-img">
-          <img src="assets/images/koroli-kino.png" alt="Анастасия Гич в мастерской">
-        </div>
-      </div>
-      <div class="about-text reveal d1">
-        <h3>О художнике</h3>
-        <div class="role">Живопись · Барельеф · Смешанная техника</div>
-        <p class="lead">«Я пишу осень круглый год — даже когда за окном лето. Для меня цвет — это способ сохранить свет, который иначе уйдёт».</p>
-        <p>Меня зовут Анастасия. Я работаю с маслом, акрилом, текстурной пастой и поталью — от классического пейзажа до объёмных барельефов и дерзких поп-арт-образов. Мои работы живут в интерьерах по всему миру.</p>
-        <p>В каждой картине — тёплая осенняя палитра: охра, бордо, глубокий оранжевый и золото. Это не просто цвета, это состояние — как вечерний свет в мастерской, когда краска ложится особенно мягко.</p>
-        <div class="about-quote">
-          «Холст — это окно в другой мир. Я просто оставляю его приоткрытым».
-          <span class="script">— Anastasia Gich</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Дальнейшие секции (галерея, prints, collections, about, exhibitions, workshop, contact, footer)
+     появятся в следующих этапах -->
+<main id="main"></main>
 
-<section class="gallery" id="gallery">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Галерея работ</span>
-      <h2>Картины, в которых живёт <em>осень</em></h2>
-      <p>Живопись маслом, объёмные барельефы, текстурные миниатюры и поп-культурные образы. Каждая работа — с историей.</p>
-    </div>
-    <div class="gallery-grid" id="galleryGrid"></div>
-  </div>
-</section>
-
-<section class="workshop" id="workshop">
-  <div class="container">
-    <div class="workshop-inner">
-      <div class="reveal">
-        <span class="script">проведите время творчески</span>
-        <h2>Мастер-класс <em>«Осенний пейзаж»</em></h2>
-        <p>Пишем масляными красками тёплый осенний пейзаж с художницей Анастасией Гич. Даже если вы никогда не держали кисть — уйдёте с готовой картиной и осенним настроением.</p>
-        <div class="workshop-info">
-          <div class="wi"><span class="ic">📅</span><span class="lbl">Дата</span><span class="val">27 сентября</span></div>
-          <div class="wi"><span class="ic">🕙</span><span class="lbl">Время</span><span class="val">10:00 – 12:00</span></div>
-          <div class="wi"><span class="ic">📍</span><span class="lbl">Место</span><span class="val">кофейня «Varka»<br>ул. Неманская 85</span></div>
-        </div>
-        <ul class="workshop-features">
-          <li>Вкусный кофе и десерт на выбор</li>
-          <li>Все материалы включены</li>
-          <li>Предварительная запись обязательна</li>
-        </ul>
-        <a href="https://www.instagram.com/anagich_art" target="_blank" rel="noopener" class="btn btn-primary">Записаться в директ →</a>
-      </div>
-      <div class="workshop-visual reveal d2">
-        <img src="assets/images/pishem-maslyanymi-kraskami.png" alt="Мастер-класс «Осенний пейзаж» — афиша">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-left reveal">
-        <span class="eyebrow" style="display:inline-block;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--sienna);margin-bottom:20px;padding:7px 18px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.5)">Связаться</span>
-        <h2>Заказать картину <em>или написать</em></h2>
-        <p>Для заказа картин, сотрудничества или вопросов — напишите в удобный мессенджер. Отвечаю лично. Доставка по всему миру 🌎</p>
-        <div class="contact-list">
-          <a href="https://t.me/ana_gich" target="_blank" rel="noopener" class="contact-item">
-            <span class="ic"><svg viewBox="0 0 24 24"><path d="M9.8 15.5l-.4 4.1c.6 0 .9-.3 1.2-.6l2.9-2.8 6 4.4c1.1.6 1.9.3 2.2-1l4-18.8.1-.1c.3-1.5-.5-2.1-1.5-1.7L1.5 9.7c-1.5.6-1.5 1.4-.3 1.8l5.5 1.7L19.4 6c.6-.4 1.1-.2.7.2L9.8 15.5z"/></svg></span>
-            <span class="txt"><span class="lbl">Telegram</span><span class="val">@ana_gich</span></span>
-          </a>
-          <a href="https://www.instagram.com/anagich_art" target="_blank" rel="noopener" class="contact-item">
-            <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 110 8.8 4.4 4.4 0 010-8.8zm0 2a2.4 2.4 0 100 4.8 2.4 2.4 0 000-4.8zm5.8-2.2a1 1 0 11-2 0 1 1 0 012 0z"/></svg></span>
-            <span class="txt"><span class="lbl">Instagram</span><span class="val">@anagich_art</span></span>
-          </a>
-          <a href="https://wa.me/375298943965" target="_blank" rel="noopener" class="contact-item">
-            <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 2a8 8 0 016.9 12l-.4.7.8 3.1-3.2-.8-.7.4A8 8 0 1112 4zm-3.5 4c-.2 0-.5.1-.7.4-.3.3-.9 1-.9 2s.7 1.9.8 2c.1.2 1.5 2.4 3.7 3.3 1.9.8 2.3.7 2.7.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3l-1.3-.6c-.2-.1-.4-.1-.5.1l-.6.8c-.1.1-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.6-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4.1-.1.1-.3 0-.4l-.6-1.4c-.2-.4-.4-.4-.5-.4h-.5z"/></svg></span>
-            <span class="txt"><span class="lbl">WhatsApp</span><span class="val">+375 29 894-39-65</span></span>
-          </a>
-        </div>
-      </div>
-      <div class="contact-right reveal d2">
-        <h3>Напишите мне</h3>
-        <p class="sub">Оставьте заявку — отвечу лично в течение дня.</p>
-        <form onsubmit="event.preventDefault();alert('Спасибо! Я свяжусь с вами в ближайшее время.');this.reset();">
-          <div class="field"><label>Имя</label><input type="text" required placeholder="Как к вам обращаться"></div>
-          <div class="field"><label>Контакт</label><input type="text" required placeholder="Telegram / WhatsApp / Email"></div>
-          <div class="field"><label>Сообщение</label><textarea required placeholder="Расскажите, какая работа вас заинтересовала или что хотите заказать"></textarea></div>
-          <button type="submit" class="btn btn-crimson">Отправить →</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="script">Anastasia Gich</div>
-        <p>Осенний свет, текстура и тишина холста. Живопись маслом, барельефы и текстурные работы. Доставка по всему миру 🌎</p>
-      </div>
-      <div class="foot-col">
-        <h4>Разделы</h4>
-        <a href="#about">О художнике</a>
-        <a href="#gallery">Галерея</a>
-        <a href="#workshop">Мастер-класс</a>
-        <a href="#contact">Контакты</a>
-      </div>
-      <div class="foot-col">
-        <h4>Связаться</h4>
-        <a href="https://t.me/ana_gich" target="_blank" rel="noopener">Telegram · @ana_gich</a>
-        <a href="https://www.instagram.com/anagich_art" target="_blank" rel="noopener">Instagram · @anagich_art</a>
-        <a href="https://wa.me/375298943965" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© <span id="year"></span> Anastasia Gich. Все права защищены.</span>
-      <span>Сделано с любовью к осени · <a href="https://metaimperiya.com/" target="_blank" rel="noopener">METAIMPERIYA</a></span>
-    </div>
-  </div>
-</footer>
-
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
-
-document.querySelector('.burger')?.addEventListener('click', () => {
-  const links = document.querySelector('.nav-links');
-  if (!links) return;
-  const open = links.style.display === 'flex';
-  links.style.display = open ? 'none' : 'flex';
-  Object.assign(links.style, {
-    position:'absolute',top:'100%',left:'0',right:'0',
-    flexDirection:'column',background:'var(--ivory)',
-    padding:'24px',gap:'18px',boxShadow:'var(--shadow)',borderRadius:'0 0 18px 18px'
-  });
-});
-
-/* ТОЛЬКО ЖЁЛТЫЕ ЛИСТЬЯ: 🍁 🍂 */
-(function makeLeaves(){
-  const layer = document.getElementById('leavesLayer');
-  if(!layer) return;
-  const leaves = ['🍁','🍂','🍁','🍁','🍂'];
-  const count = window.innerWidth < 640 ? 10 : 16;
-  for(let i=0;i<count;i++){
-    const el = document.createElement('span');
-    el.className = 'leaf';
-    el.textContent = leaves[Math.floor(Math.random()*leaves.length)];
-    el.style.left = Math.random()*100 + '%';
-    el.style.fontSize = (18 + Math.random()*20) + 'px';
-    el.style.animationDuration = (9 + Math.random()*10) + 's';
-    el.style.animationDelay = (-Math.random()*18) + 's';
-    el.style.opacity = 0.55 + Math.random()*0.35;
-    layer.appendChild(el);
-  }
-})();
-
-/* ГАЛЕРЕЯ — 11 работ */
-const artworks = [
-  {img:'assets/images/du-hast-mich.png',video:'assets/videos/anagich-art.MOV',badge:'Поп-арт',title:'Ты меня понял 💚',meta:'Акрил на холсте',
-   desc:'Дерзкая и ироничная работа стирает границы между мирами. Зелёный пришелец в красных очках-сердцах с дымящейся сигаретой — игра со стереотипами и поп-культурой.',
-   more:'<strong>Идея:</strong> визуальная ирония, где зелёный цвет и красные глаза отсылают к определённой культуре. Насыщенные цвета на глубоком чёрном фоне делают работу акцентом интерьера.'},
-  {img:'assets/images/lavandovoe-bezmolvie-provansa.png',video:'assets/videos/lavandovoe-bezmolvie-provansa.MOV',badge:'Барельеф',title:'Лавандовое Безмолвие Прованса',meta:'Скульптурная живопись, многослойный рельеф',
-   desc:'Объёмный барельеф, оживляющий стену и переносящий в предгорья Прованса. Монохромная палитра с мягкими оттенками сиреневого.',
-   more:'<strong>Детали:</strong> стилизованные горные пики из гипсовой шпаклёвки, богато текстурированная лаванда, кустарники у подножия. Композиция в нише создаёт «окно» в другой мир.'},
-  {img:'assets/images/pervoe-znakomstvo.png',badge:'Миниатюра 20×20',title:'Первое знакомство',meta:'Холст, смешанная техника, текстурная паста, поталь',
-   desc:'Уютная миниатюра, погружающая в атмосферу волшебного леса и детских воспоминаний. Медвежонок с трепетом рассматривает хрупкую бабочку.',
-   more:'<strong>Эффект:</strong> текстурная паста и мерцающая золотая поталь создают эффект антикварной работы, которая словно светится изнутри.'},
-  {img:'assets/images/put-k-vnutrennemu-svetu.png',badge:'Духовное',title:'Путь к внутреннему свету',meta:'Холст, акрил, золотая поталь',
-   desc:'Глубокая и атмосферная работа, излучающая спокойствие и гармонию. Образ Будды в молитвенном жесте — символ единства и духовного баланса.',
-   more:'<strong>Контраст:</strong> тёмный фактурный фон и тёплые вспышки золотой потали создают ощущение внутреннего свечения и вечности.'},
-  {img:'assets/images/rozovyj-rassvet-v-abstraktsii.png',badge:'Абстракция',title:'Розовый рассвет в абстракции',meta:'Смешанная техника, текстура, акрил, золото',
-   desc:'Изысканная композиция, где хрупкая красота пиона встречается со сложной абстрактной текстурой.',
-   more:'<strong>Акценты:</strong> золотые капли и линии добавляют благородного сияния и объёма. Работа выглядит воздушно и современно.'},
-  {img:'assets/images/in-i-yan-sredi-lugov.png',badge:'Пейзаж',title:'Инь и Янь среди лугов',meta:'Холст, масло / акрил',
-   desc:'Добрая и символичная работа, пронизанная теплом солнечного дня. Две овечки — светлая и чёрная — встретились посреди бескрайнего золотистого луга.',
-   more:'<strong>Фактура:</strong> живые мазки передают шуршание травы на ветру и мягкость шерсти. Сцена наполнена умиротворением и простором.'},
-  {img:'assets/images/zimnij-spusk.png',badge:'3D-рельеф',title:'Зимний спуск',meta:'Холст, текстурная паста, акрил, объёмный рельеф',
-   desc:'Интерьерная картина с ярко выраженным 3D-эффектом, переносящая заснеженные горные склоны прямо в пространство комнаты.',
-   more:'<strong>Детали:</strong> фактурная паста имитирует глубокий снег и рельеф трассы, миниатюрные фигурки сноубордистов и объёмные ёлочки дополняют зимний пейзаж.'},
-  {img:'assets/images/siluet-v-sineve.png',video:'assets/videos/siluet-v-sineve.MOV',badge:'Абстракция',title:'Силуэт в синеве',meta:'Холст, акрил / масло, мастихин',
-   desc:'Эмоциональная работа в монохромной синей гамме. Полуабстрактный женский силуэт передаёт состояние уединения и внутреннего покоя.',
-   more:'<strong>Динамика:</strong> экспрессивные мазки и стекающие капли краски добавляют полотну современного звучания и глубины.'},
-  {img:'assets/images/navstrechu-vetru.png',badge:'Марина',title:'Навстречу ветру',meta:'Холст, масло / акрил, мастихин',
-   desc:'Воздушная морская работа, наполненная свежестью и романтикой путешествий. Белоснежный парусник идёт по волнам в сопровождении стайки чаек.',
-   more:'<strong>Фактура:</strong> объёмные мазки мастихина передают движение воды, солёную пену и порывы попутного ветра.'},
-  {img:'assets/images/koroli-kino.png',video:'assets/videos/koroli-kino.MOV',badge:'Кино',title:'Короли кино',meta:'Холст, масло / акрил',
-   desc:'Масштабная и дерзкая работа, вдохновлённая легендарным кинематографом Квентина Тарантино. Культовые персонажи с оружием передают напряжённую атмосферу фильма.',
-   more:'<strong>Вайб:</strong> классическая живописная техника встречается с поп-культурным образом. Для тех, кто ценит сильные образы и культовые киноцитаты в интерьере.'},
-  {img:'assets/images/hozyajka-cheshujchatyh-mirov.png',badge:'Фэнтези',title:'Мать драконов',meta:'Холст, масло / акрил',
-   desc:'Масштабная работа в жанре фэнтези, наполненная мистикой и силой. Древний дракон защищает свою обладательницу в элегантном платье с лавровым венком.',
-   more:'<strong>Атмосфера:</strong> глубокие тёмные оттенки, переливы изумрудной чешуи и пронзительный взгляд создают ощущение живого мифа.'}
-];
-
-const grid = document.getElementById('galleryGrid');
-artworks.forEach((a, i) => {
-  const card = document.createElement('article');
-  card.className = 'art-card reveal';
-  card.style.transitionDelay = (i % 3) * 0.08 + 's';
-  const media = a.video
-    ? `<video src="${a.video}" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video>`
-    : `<img src="${a.img}" alt="${a.title}" loading="lazy">`;
-  card.innerHTML = `
-    <div class="art-media"><span class="art-badge">${a.badge}</span>${media}</div>
-    <div class="art-body">
-      <h3>${a.title}</h3>
-      <div class="art-meta">${a.meta}</div>
-      <p class="art-desc">${a.desc}</p>
-      <div class="art-more"><div class="art-more-inner">${a.more}</div></div>
-      <div class="art-foot"><span class="script">детали ↓</span><button class="art-toggle" type="button">Подробнее →</button></div>
-    </div>`;
-  grid.appendChild(card);
-  const btn = card.querySelector('.art-toggle');
-  const more = card.querySelector('.art-more');
-  btn.addEventListener('click', () => {
-    const open = card.classList.toggle('open');
-    more.style.maxHeight = open ? more.scrollHeight + 'px' : null;
-    btn.textContent = open ? 'Свернуть ↑' : 'Подробнее →';
-  });
-});
-
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
