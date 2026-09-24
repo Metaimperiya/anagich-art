@@ -1,6 +1,5 @@
 /**
- * Точка входа. Инициализирует все модули в правильном порядке.
- * Загружается как ES-модуль: <script type="module" src="js/app.js"></script>
+ * Точка входа.
  */
 
 import { loadRates } from "./currency/rates.js";
@@ -14,37 +13,32 @@ import { initCart } from "./modules/cart.js";
 import { initPopup } from "./modules/popup.js";
 import { renderStaticSections } from "./modules/render-static.js";
 
-async function bootstrap() {
+/* Безопасный вызов — если модуль падает, остальные всё равно работают */
+async function safe(name, fn) {
   try {
-    /* 1. Применяем переводы к статике HTML */
-    applyTranslations();
-
-    /* 2. Загружаем курсы валют (async, но не блокирует рендер) */
-    await loadRates();
-    await initCurrency();
-
-    /* 3. Рендерим статические секции (about, workshop, contact, footer, exhibitions) */
-    renderStaticSections();
-
-    /* 4. Навигация: скролл, dropdowns, бургер, листья */
-    initNavigation();
-
-    /* 5. Модули каталога и корзины */
-    initGallery();
-    initSearch();
-    initWishlist();
-    initCart();
-
-    /* 6. Popup — с задержкой, чтобы не мешать сразу */
-    initPopup();
-
-    /* 7. Убираем прелоадер */
-    document.body.classList.add("ready");
+    await fn();
+    console.log(`✅ ${name} ok`);
   } catch (e) {
-    console.error("[app] bootstrap failed", e);
-    /* Даже при ошибке показываем сайт */
-    document.body.classList.add("ready");
+    console.error(`❌ ${name} failed:`, e);
   }
+}
+
+async function bootstrap() {
+  console.log("🚀 bootstrap start");
+
+  await safe("applyTranslations", () => applyTranslations());
+  await safe("loadRates", () => loadRates());
+  await safe("initCurrency", () => initCurrency());
+  await safe("renderStaticSections", () => renderStaticSections());
+  await safe("initNavigation", () => initNavigation());
+  await safe("initGallery", () => initGallery());
+  await safe("initSearch", () => initSearch());
+  await safe("initWishlist", () => initWishlist());
+  await safe("initCart", () => initCart());
+  await safe("initPopup", () => initPopup());
+
+  document.body.classList.add("ready");
+  console.log("🏁 bootstrap done");
 }
 
 if (document.readyState === "loading") {
