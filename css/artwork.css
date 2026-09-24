@@ -11,6 +11,7 @@
 .artwork-modal.open{opacity:1;visibility:visible}
 
 .artwork-dialog{
+  position:relative;
   background:var(--ivory);
   border-radius:var(--radius-lg);
   max-width:1180px;width:100%;
@@ -33,7 +34,6 @@
 .artwork-close:hover{background:var(--crimson);color:#fff;transform:rotate(90deg)}
 .artwork-close svg{width:18px;height:18px}
 
-/* Левая часть — изображение */
 .artwork-media{
   position:relative;background:var(--beige);
   overflow:hidden;
@@ -56,7 +56,6 @@
 .artwork-thumb.active{border-color:var(--crimson)}
 .artwork-thumb img{width:100%;height:100%;object-fit:cover}
 
-/* Правая часть — информация */
 .artwork-info{padding:48px 44px;display:flex;flex-direction:column}
 .artwork-cat{
   font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
@@ -113,7 +112,7 @@
 
 @media(max-width:900px){
   .artwork-dialog{grid-template-columns:1fr;max-height:96vh}
-  .artwork-media{aspect-ratio:4/5}
+  .artwork-media{aspect-ratio:auto;min-height:200px;max-height:60vh}
   .artwork-info{padding:32px 26px}
   .artwork-media img,.artwork-media video{max-height:60vh}
 }
@@ -122,6 +121,7 @@
   .artwork-info{padding:26px 20px 30px}
   .artwork-actions .btn{padding:14px 20px;font-size:13px;min-width:auto}
 }
+
 /* ===== Search Overlay ===== */
 .search-overlay{
   position:fixed;inset:0;z-index:1400;
@@ -192,6 +192,7 @@
   .search-item{padding:12px 18px}
   .search-item img{width:52px;height:52px}
 }
+
 /* ===== Drawer (wishlist / cart) ===== */
 .drawer-overlay{
   position:fixed;inset:0;z-index:1300;
