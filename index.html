@@ -23,6 +23,14 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/artwork.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/workshop.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/popup.css">
+<link rel="stylesheet" href="css/responsive.css">
 
 <script type="application/ld+json">
 {
@@ -48,8 +56,8 @@
     <nav class="nav-menu" id="navMenu">
       <a href="#top" data-i18n="nav.home">HOME</a>
       <a href="#gallery" data-i18n="nav.paintings">ORIGINAL PAINTINGS</a>
-      <a href="#prints" data-i18n="nav.prints">FINE ART PRINTS</a>
-      <a href="#collections" data-i18n="nav.collections">COLLECTIONS</a>
+      <a href="#gallery" data-i18n="nav.prints">FINE ART PRINTS</a>
+      <a href="#gallery" data-i18n="nav.collections">COLLECTIONS</a>
       <a href="#about" data-i18n="nav.about">ABOUT</a>
       <a href="#exhibitions" data-i18n="nav.exhibitions">EXHIBITIONS</a>
       <a href="#workshop" data-i18n="nav.workshop">WORKSHOP</a>
@@ -115,9 +123,43 @@
   </div>
 </section>
 
-<!-- Дальнейшие секции (галерея, prints, collections, about, exhibitions, workshop, contact, footer)
-     появятся в следующих этапах -->
-<main id="main"></main>
+<!-- GALLERY / CATALOG -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="gallery.eyebrow">ГАЛЕРЕЯ РАБОТ</span>
+      <h2 data-i18n="gallery.title">Картины, в которых живёт осень</h2>
+      <p data-i18n="gallery.subtitle">Живопись маслом, объёмные барельефы, текстурные миниатюры и поп-культурные образы. Каждая работа — с историей.</p>
+    </div>
+    <div class="catalog-toolbar" id="catalogToolbar"></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container" id="aboutContent"></div>
+</section>
+
+<!-- EXHIBITIONS -->
+<section class="exhibitions" id="exhibitions">
+  <div class="container" id="exhibitionsContent"></div>
+</section>
+
+<!-- WORKSHOP -->
+<section class="workshop" id="workshop">
+  <div class="container" id="workshopContent"></div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container" id="contactContent"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container" id="footerContent"></div>
+</footer>
 
 <script type="module" src="js/app.js"></script>
 </body>
